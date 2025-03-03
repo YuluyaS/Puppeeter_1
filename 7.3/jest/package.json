@@ -2,7 +2,7 @@
   "name": "jsaqa_3",
   "version": "1.0.0",
   "description": "jest test",
-  "main": ".jsv",
+  "main": ".jsv", 
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watchAll",
