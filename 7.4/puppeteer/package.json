@@ -1,16 +1,17 @@
 {
   "name": "jsaqa_3_3",
   "version": "1.0.0",
-  "description": "",
+  "description": "homework_4",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest --runInBand"
+    
   },
-  "author": "",
+  "author": "Yuliya Svyatynina",
   "license": "ISC",
   "dependencies": {
-    "jest": "^27.3.1",
-    "jest-puppeteer": "^6.0.0",
-    "puppeteer": "^13.3.2"
+    "jest": "^27.7.0",
+    "jest-puppeteer": "^11.0.0",
+    "puppeteer": "^24.3.1"
   }
 }

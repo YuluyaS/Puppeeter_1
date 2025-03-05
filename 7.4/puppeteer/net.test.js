@@ -1,3 +1,11 @@
+const puppeteer = require("puppeteer");
+const url = "https://netology.ru";
+
+(async () => {
+  const browser = await puppeteer.launch({headless:false,slowMo:1000});
+})
+
+
 let page;
 
 beforeEach(async () => {
@@ -13,22 +21,27 @@ describe("Github page tests", () => {
   test("The h1 header content'", async () => {
     const firstLink = await page.$("header div div a");
     await firstLink.click();
-    await page.waitForSelector('h1');
+    await page.waitForSelector("h1");
     const title2 = await page.title();
-    expect(title2).toEqual('GitHub: Where the world builds software · GitHub');
+    expect(title2).toEqual("GitHub: Where the world builds software · GitHub");
   });
+
 
   test("The first link attribute", async () => {
-    const actual = await page.$eval("a", link => link.getAttribute('href') );
+    const actual = await page.$eval("a", (link) => link.getAttribute("href"));
     expect(actual).toEqual("#start-of-content");
   });
-
+  
+  
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
     await page.waitForSelector(btnSelector, {
       visible: true,
     });
-    const actual = await page.$eval(btnSelector, link => link.textContent);
-    expect(actual).toContain("Sign up for free")
+    const actual = await page.$eval(btnSelector, (link) => link.textContent);
+    expect(actual).toContain("Sign up for free");
+
+    //await page.close();
+    //await browser.close();
   });
 });
