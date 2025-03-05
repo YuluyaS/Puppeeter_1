@@ -13,6 +13,8 @@ describe("Netology.ru tests", () => {
     await page.goto("https://netology.ru");
   });
 
+  //describe('Долгие тесты', function() { this.timeout(5000); // Мы выделили дополнительные пять секунд! });
+
   test("The first link text 'Медиа'", async () => {
     //page = await browser.newPage();
     //await page.goto("https://netology.ru");
@@ -47,5 +49,10 @@ test("The h1 should contain 'Работа'", async () => {
     "h1.presentation_titleIXgqx",
     (link) => link.textContent
   );
+
+  await page.evaluate(() => {
+    debugger;
+  });
+
   expect(actual).toContain(expected);
 });
