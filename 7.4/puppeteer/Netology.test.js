@@ -1,3 +1,11 @@
+const puppeteer = require("puppeteer");
+
+const url = "https://netology.ru";
+
+async () => {
+  const browser = await puppeteer.launch({ headless: false, slowMo: 1000 });
+};
+
 let page;
 
 beforeEach(async () => {
@@ -13,9 +21,9 @@ describe("Netology.ru tests", () => {
     await page.goto("https://netology.ru");
   });
 
-  //describe('Долгие тесты', function() { this.timeout(5000); // Мы выделили дополнительные пять секунд! });
+  //describe('Долгие тесты', function() { this.timeout(5000);
 
-  test("The first link text 'Медиа'", async () => {
+  test1("The first link text 'Медиа'", async () => {
     //page = await browser.newPage();
     //await page.goto("https://netology.ru");
 
@@ -29,7 +37,7 @@ describe("Netology.ru tests", () => {
     //page.close();
   });
 
-  test("The first link leads on 'Медиа' page", async () => {
+  test1("The first link leads on 'Медиа' page", async () => {
     //page = await browser.newPage();
     //await page.goto("https://netology.ru");
 
@@ -42,7 +50,7 @@ describe("Netology.ru tests", () => {
   });
 });
 
-test("The h1 should contain 'Работа'", async () => {
+test1("The h1 should contain 'Работа'", async () => {
   const expected = "Работа";
   await page.goto("https://netology.ru/job");
   const actual = await page.$eval(

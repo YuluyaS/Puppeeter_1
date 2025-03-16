@@ -1,10 +1,11 @@
-const puppeteer = require("puppeteer");
-const url = "https://netology.ru";
+//const puppeteer = require("puppeteer");
+//onst url = "https://netology.ru";
 
-(async () => {
-  const browser = await puppeteer.launch({headless:false,slowMo:1000});
-})
-
+/*
+async () => {
+  const browser = await puppeteer.launch({ headless: false, slowMo: 1000 });
+};
+*/
 
 let page;
 
@@ -26,13 +27,14 @@ describe("Github page tests", () => {
     expect(title2).toEqual("GitHub: Where the world builds software · GitHub");
   });
 
-
+  /*
   test("The first link attribute", async () => {
     const actual = await page.$eval("a", (link) => link.getAttribute("href"));
     expect(actual).toEqual("#start-of-content");
   });
-  
-  
+  */
+
+  /*
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
     await page.waitForSelector(btnSelector, {
@@ -44,4 +46,16 @@ describe("Github page tests", () => {
     //await page.close();
     //await browser.close();
   });
+  */
 });
+
+//async () => {
+//const browser = await puppeteer.launch({ headless: false, slowMo: 1000 });
+//};
+//const page = await browser.newPage();
+//await page.goto(url);
+//const title = await page.title();
+//console.log(title);
+//title ('YuluyaS (YuliyaS)');https://github.com/YuluyaS
+//await page.close();
+//await browser.close();
