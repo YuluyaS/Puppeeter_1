@@ -24,24 +24,26 @@ describe("Github page tests", () => {
     await page.goto("https://github.com/team");
   });
 
-  test("The h1 header content'", async () => {
+  test("The h1 header content", async () => {
+    //jest.setTimeout(24000);
+
     const firstLink = await page.$("header div div a");
     await firstLink.click();
     await page.waitForSelector("h1");
     const title2 = await page.title();
 
-    console.log("title2=");
+    //console.log("title2=");
 
     //expect(title2).toEqual("GitHub: Where the world builds software · GitHub");
     expect(title2).toEqual(
       "GitHub · Build and ship software on a single, collaborative platform · GitHub"
     );
-  }, 30000);
+  }, 15000);
 
   test("The first link attribute", async () => {
     const actual = await page.$eval("a", (link) => link.getAttribute("href"));
     expect(actual).toEqual("#start-of-content");
-  }, 14000);
+  }, 2000);
 
   test("The page contains Sign in button", async () => {
     const btnSelector = ".btn-large-mktg.btn-mktg";
@@ -54,29 +56,23 @@ describe("Github page tests", () => {
     page.evaluate(() => {
       debugger;
     });
-  }, 19000);
+  }, 2000);
 });
 
 test("The title should equal 'GitHub Features · GitHub' ", async () => {
   await page.goto("https://github.com/features");
-
   const actual = await page.title();
-
   expect(actual).toEqual("GitHub Features · GitHub");
-}, 10000);
+}, 2000);
 
 test("The title should equal 'GitHub Codespaces · GitHub' ", async () => {
   await page.goto("https://github.com/features/codespaces");
-
   const actual = await page.title();
-
   expect(actual).toEqual("GitHub Codespaces · GitHub");
-}, 10000);
+}, 2000);
 
 test("The title should equal 'GitHub Actions · GitHub' ", async () => {
   await page.goto("https://github.com/features/actions");
-
   const actual = await page.title();
-
   expect(actual).toEqual("GitHub Actions · GitHub");
-}, 10000);
+}, 2000);
